@@ -1,15 +1,19 @@
 variable "client_id" {
-  description = "client id"
+    description =   "Client ID (APP ID) of the application"
+    type        =   string
 }
 
 variable "client_secret" {
-  description = "client secret"
+    description =   "Client Secret (Password) of the application"
+    type        =   string
 }
 
 variable "subscription_id" {
-  description = "subscription id"
+    description =   "Subscription ID"
+    type        =   string
 }
 
 variable "tenant_id" {
-  description = "tenant id"
+    description =   "Tenant ID"
+    type        =   string
 }
