@@ -1,17 +1,27 @@
-# Configure the Azure provider
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 3.0.2"
+    required_providers  {
+        azurerm =   {
+            source  =   "hashicorp/azurerm"
+        }
     }
-  }
-
-  required_version = ">= 1.1.0"
 }
 
 provider "azurerm" {
-  features {}
+    version         =   "~> 2.0"
+    client_id       =   var.client_id
+    client_secret   =   var.client_secret
+    subscription_id =   var.subscription_id
+    tenant_id       =   var.tenant_id
+    
+    features {}
+}
+
+provider "azuread" {
+    version         =   ">= 0.11"
+    client_id       =   var.client_id
+    client_secret   =   var.client_secret
+    tenant_id       =   var.tenant_id
+    alias           =   "ad"
 }
 
 resource "azurerm_resource_group" "rg" {
