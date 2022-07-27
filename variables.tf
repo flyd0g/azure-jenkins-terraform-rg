@@ -21,4 +21,5 @@ variable "tenant_id" {
 variable "resource_group" {
     description =   "Resource Group name"
     type        =   string
+    default     =   "adamResourceGroup"
 }
