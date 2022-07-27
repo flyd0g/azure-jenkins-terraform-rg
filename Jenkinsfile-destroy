@@ -6,18 +6,6 @@ pipeline {
     }
     
     stages {
-    	stage('Git checkout') {
-            steps {
-               git branch: 'main', url: 'https://github.com/flyd0g/azure-terraform-rg.git'
-            }
-        }
-	stage('Terraform init') {
-            steps {
-	            withCredentials([azureServicePrincipal('28927735-fb9c-482b-a7e2-715a6c814b72')]) {
-                    sh 'terraform init -upgrade'
-	           }
-            }
-        }
         stage('Terraform destroy') {
             steps {
 	            withCredentials([azureServicePrincipal('28927735-fb9c-482b-a7e2-715a6c814b72')]) {
